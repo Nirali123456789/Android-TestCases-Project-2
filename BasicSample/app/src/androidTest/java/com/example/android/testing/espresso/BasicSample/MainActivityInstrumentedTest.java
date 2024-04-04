@@ -38,6 +38,19 @@ public class MainActivityInstrumentedTest {
         onView(withId(R.id.show_text_view)).check(matches(withText("123")));
     }
 
+
+    @Test
+    public void testChangeTextBtnWithEmptyInput() {
+        onView(withId(R.id.changeTextBt)).perform(click());
+        onView(withId(R.id.textToBeChanged)).check(matches(withText("")));
+    }
+
+    @Test
+    public void testOpenActivityAndChangeTextBtnWithEmptyInput() {
+        onView(withId(R.id.activityChangeTextBtn)).perform(click());
+        onView(withId(R.id.show_text_view)).check(matches(withText("")));
+    }
+
     
 
 }
