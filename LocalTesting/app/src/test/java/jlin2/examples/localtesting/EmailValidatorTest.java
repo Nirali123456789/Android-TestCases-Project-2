@@ -14,6 +14,7 @@ public class EmailValidatorTest {
         assertTrue(EmailValidator.Companion.isValidEmail("22@viranch.co.ca"));
         assertTrue(EmailValidator.Companion.isValidEmail("nehavaidya@viranch.com"));
         assertTrue(EmailValidator.Companion.isValidEmail("n_pandya261091@fanshaweonline.ca"));
+        assertTrue(EmailValidator.Companion.isValidEmail("username@domain.com"));
     }
 
     @Test
@@ -21,8 +22,9 @@ public class EmailValidatorTest {
         assertFalse(EmailValidator.Companion.isValidEmail("88@abc"));
         assertFalse(EmailValidator.Companion.isValidEmail(""));
         assertFalse(EmailValidator.Companion.isValidEmail(null));
+        assertFalse(EmailValidator.Companion.isValidEmail("username@abc..com"));
+        assertFalse(EmailValidator.Companion.isValidEmail("@fanshawe.com"));
+        assertFalse(EmailValidator.Companion.isValidEmail("username123"));
     }
-
-
 }
 
